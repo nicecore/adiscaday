@@ -4,16 +4,6 @@ const nextConfig = {
 }
 
 module.exports = {
-  nextConfig,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'i.discogs.com',
-        port: '',
-        
-      },
-    ],
-  },
+  nextConfig
 
 }

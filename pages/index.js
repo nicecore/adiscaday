@@ -41,12 +41,13 @@ export default function Home({ reviews }) {
             {
               reviews.map((review) => (
                 <li key={review.id} className="album">
-                  <img src={review.coverUrl} width="400" height="400" alt="" />
-                  <Link href={`/reviews/${review.slug}`} className="overlay">
-                    <div className="overlay-text">
-                      {review.name}
-                    </div>
+                  <Link href={`/reviews/${review.slug}`}>
+                    <img src={review.coverUrl} width="400" height="400" alt="" className='grow' />
                   </Link>
+                    {/* <div className="overlay-text">
+                      {review.name}
+                    </div> */}
+
                 </li>
 
               ))

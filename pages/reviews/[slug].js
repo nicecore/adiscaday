@@ -10,8 +10,9 @@ const REVIEW = gql`
     coverUrl
     name
     reviewBody {
-      html
       markdown
+      text
+      html
     }
     slug
     summary
@@ -27,8 +28,15 @@ const SLUGLIST = gql`
   }
 `
 
+
 const ReviewDetail = ({ review }) => {
-  console.log(review)
+
+  // Dangerously set inner HTML
+  function createMarkup() {
+    return {__html: review.reviewBody.html};
+  }
+
+
   return (
     <div className='container'>
       <h1>
@@ -36,10 +44,10 @@ const ReviewDetail = ({ review }) => {
       </h1>
       <img className='album-cover' src={review.coverUrl} width="300" height="300" alt="" />
       <div className='detail-container'>
-        <p className='review-detail-body'>
+        <p className="review-detail-body" dangerouslySetInnerHTML={createMarkup()}></p>
+        {/* <p className='review-detail-body'>
           {review.reviewBody.markdown}
-        </p>
-
+        </p> */}
       </div>
     </div>
   )

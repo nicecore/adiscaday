@@ -169,3 +169,13 @@ ul {
 .album-cover {
   padding: 2rem 0;
 }
+
+
+/* Grow effect */
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}

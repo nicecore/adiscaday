@@ -7,7 +7,7 @@ const graphcms = new GraphQLClient('https://api-us-west-2.hygraph.com/v2/cll5m1x
 
 const ALLREVIEWS = gql`
 { 
-  reviews {
+  reviews(orderBy: createdAt_DESC) {
     createdAt
     dateAndTime
     id

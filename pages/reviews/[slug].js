@@ -1,21 +1,21 @@
 import React from 'react'
 import {GraphQLClient, gql} from 'graphql-request'
+import Head from 'next/head'
 
-const graphcms = new GraphQLClient('https://api-us-east-1-shared-usea1-02.hygraph.com/v2/cldutt5830kze01rtgjljevdo/master')
+const graphcms = new GraphQLClient('https://api-us-west-2.hygraph.com/v2/cll5m1xec0rey01t7adiz2gvp/master')
 
 const REVIEW = gql`
   query Review($slug: String!) {
     review(where: {slug: $slug}) {
-    id
-    coverUrl
-    name
-    reviewBody {
-      markdown
-      text
-      html
-    }
-    slug
-    summary
+      title
+      id
+      slug
+      cover {
+        url
+      }
+      body {
+        html
+      }
     }
   }
 `
@@ -33,16 +33,21 @@ const ReviewDetail = ({ review }) => {
 
   // Dangerously set inner HTML
   function createMarkup() {
-    return {__html: review.reviewBody.html};
+    return {__html: review.body.html};
   }
 
 
   return (
     <div className='container'>
+      <Head>
+        <title>{review.title} | A Disc A Day</title>
+        <meta name="description" content={`{review.title} | A Disc A Day`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <h1>
-        {review.name}
+        {review.title}
       </h1>
-      <img className='album-cover' src={review.coverUrl} width="300" height="300" alt="" />
+      <img className='album-cover' src={review.cover.url} width="400" height="400" alt="" />
       <div className='detail-container'>
         <p className="review-detail-body" dangerouslySetInnerHTML={createMarkup()}></p>
         {/* <p className='review-detail-body'>

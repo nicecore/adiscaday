@@ -1,24 +1,22 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 // import styles from '@/styles/Home.module.css'
 import {GraphQLClient, gql} from 'graphql-request'
 
-const graphcms = new GraphQLClient('https://api-us-east-1-shared-usea1-02.hygraph.com/v2/cldutt5830kze01rtgjljevdo/master')
+const graphcms = new GraphQLClient('https://api-us-west-2.hygraph.com/v2/cll5m1xec0rey01t7adiz2gvp/master')
 
 const ALLREVIEWS = gql`
 { 
   reviews {
-    coverUrl
     createdAt
+    dateAndTime
     id
-    name
     publishedAt
     slug
-    summary
+    title
     updatedAt
-    reviewBody {
-      html
+    cover {
+      url
     }
   }
 }
@@ -31,7 +29,7 @@ export default function Home({ reviews }) {
     <>
       <Head>
         <title>A Disc A Day</title>
-        <meta name="description" content="A Disc A Day" />
+        <meta name="description" content="A Disc A Day | Short album reviews every day" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -42,7 +40,7 @@ export default function Home({ reviews }) {
               reviews.map((review) => (
                 <li key={review.id} className="album">
                   <Link href={`/reviews/${review.slug}`}>
-                    <img src={review.coverUrl} width="400" height="400" alt="" className='grow' />
+                    <img src={review.cover.url} width="400" height="400" alt="" className='grow' />
                   </Link>
                     {/* <div className="overlay-text">
                       {review.name}

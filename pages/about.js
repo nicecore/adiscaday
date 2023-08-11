@@ -8,6 +8,8 @@ const About = () => {
       <ul>
         <li>• Improved UI</li>
         <li>• Comments on reviews</li>
+        <li>• YouTube embeds in reviews so tracks can be listened to while you read my review</li>
+        <li>• Whatever else I can think of</li>
       </ul>
       <p className='about-paragraph'>
       Any questions, comments, etc. can be sent to <a href="mailto:adamdcameron@gmail.com">adamdcameron@gmail.com</a>. Thank you for reading!

@@ -12,7 +12,7 @@ export default function SiteHeader({children}) {
       <nav className="navbar">
         <div className="container">
           <div className="logo">
-            <Link href="/">a disc a day</Link>
+            <Link id="site-title-link" href="/">a disc a day</Link>
           </div>
           <ul className="nav">
             <Link className="nav-links" href="/about">About</Link>

@@ -53,7 +53,7 @@ ul {
 }
 
 .review-detail-body {
-  width: 50%;
+  width: 60%;
 }
 
 /* Navbar */
@@ -92,7 +92,7 @@ ul {
 }
 
 .nav-links {
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 /* Flex container */
@@ -181,8 +181,58 @@ ul {
   transform: scale(1.05);
 }
 
-/* Testing image size */
+/* Individual review page */
 
-.album-cover {
+.review-detail-body p {
+  margin: 20px 0;
+}
 
+
+
+/* Responsiveness */
+@media (max-width: 1175px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .review-detail-title {
+    text-align: center;
+  }
+
+  .review-detail-body {
+    margin: 0 auto;
+  }
+
+  .album-cover {
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    margin: 10px 0;
+  }
+
+  .review-detail-title {
+    margin-top: 30px;
+  }
+
+  #site-title-link {
+    font-size: 25px;
+  }
+
+}
+
+@media (max-width: 930px) {
+  .review-detail-body {
+    width: 85%;
+  }
+}
+
+@media (max-width: 400px) {
+  .review-detail-body {
+    width: 92%;
+  }
 }

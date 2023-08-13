@@ -36,9 +36,6 @@ const ReviewDetail = ({ review }) => {
     return {__html: review.body.html};
   }
 
-  // comment so I can push
-
-
   return (
     <div className='container'>
       <Head>
@@ -46,15 +43,14 @@ const ReviewDetail = ({ review }) => {
         <meta name="description" content={`{review.title} | A Disc A Day`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <h1>
+      <h1 className='review-detail-title'>
         {review.title}
       </h1>
       <img className='album-cover' src={review.cover.url} width="400" height="400" alt="" />
       <div className='detail-container'>
-        <p className="review-detail-body" dangerouslySetInnerHTML={createMarkup()}></p>
-        {/* <p className='review-detail-body'>
-          {review.reviewBody.markdown}
-        </p> */}
+        <p className="review-detail-body" dangerouslySetInnerHTML={createMarkup()}>
+
+        </p>
       </div>
     </div>
   )

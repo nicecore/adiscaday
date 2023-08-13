@@ -15,7 +15,7 @@ export default function SiteHeader({children}) {
             <Link id="site-title-link" href="/">a disc a day</Link>
           </div>
           <ul className="nav">
-            <Link className="nav-links" href="/about">About</Link>
+            <Link className="nav-links" href="/about">about</Link>
           </ul>
         </div>
       </nav>

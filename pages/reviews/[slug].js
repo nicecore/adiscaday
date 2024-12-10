@@ -2,7 +2,7 @@ import React from 'react'
 import {GraphQLClient, gql} from 'graphql-request'
 import Head from 'next/head'
 
-const graphcms = new GraphQLClient('https://api-us-west-2.hygraph.com/v2/cll5m1xec0rey01t7adiz2gvp/master')
+const graphcms = new GraphQLClient('https://us-west-2.cdn.hygraph.com/content/cll5m1xec0rey01t7adiz2gvp/master')
 
 const REVIEW = gql`
   query Review($slug: String!) {

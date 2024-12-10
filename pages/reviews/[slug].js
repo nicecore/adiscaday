@@ -72,7 +72,7 @@ export async function getStaticPaths() {
   const { reviews } = await graphcms.request(SLUGLIST)
   return {
     paths: reviews.map((review) => ({ params: { slug: review.slug }})),
-    fallback: false,
+    fallback: true,
   }
 }
 

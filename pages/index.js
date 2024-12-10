@@ -3,7 +3,7 @@ import Link from 'next/link'
 // import styles from '@/styles/Home.module.css'
 import {GraphQLClient, gql} from 'graphql-request'
 
-const graphcms = new GraphQLClient('https://api-us-west-2.hygraph.com/v2/cll5m1xec0rey01t7adiz2gvp/master')
+const graphcms = new GraphQLClient('https://us-west-2.cdn.hygraph.com/content/cll5m1xec0rey01t7adiz2gvp/master')
 
 const ALLREVIEWS = gql`
 { 
